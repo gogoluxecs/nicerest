@@ -7,7 +7,7 @@ block, different url system rules for your extensions and so on...
 
 This is not for frameworks like Symfony, because such frameworks don't need it at all.
 
-Its for the systems, that don't use framework, or working with some funny specific solutions 
+Its for the systems, that don't use framework, or working with some funny specific solutions
 and you want to escape from the their original structure - hundred of files, that are not organized well,
 Lack of adequate design patterns, build on "standard" for php developing system.
 
@@ -23,3 +23,7 @@ Rewriting url: rules for the urls and their parameters. *TBD
 == Implementation ==
 1) Autoloading of classes.
 2) Rest action is a placeholder, to call MVC-module that holds all of your logic there.
+
+== TODO ==
+1) Put error in response format of the action.
+
