@@ -1,7 +1,9 @@
 <?php
-class lib_adapter_action_Execute
-implements lib_adapter_action_Iexecute
+class nicerest_lib_adapter_action_Execute
+implements nicerest_lib_adapter_action_Iexecute
 {
+	const ACTION_METHOD = 'execute';
+
 	private $restAction = null;
 
 	public function __construct($restAction)
@@ -16,11 +18,15 @@ implements lib_adapter_action_Iexecute
 	 */
 	public function execute()
 	{
-		if(!method_exists($this->restAction, 'execute'))
+		if(!method_exists($this->restAction, self::ACTION_METHOD))
 			return null;
 
-		$this->restAction->execute();
-		//TODO read the comments using reflection and set apopriate header
+		//handle based on Doc comments
+		$handle = new nicerest_lib_command_action_Handle($this->restAction);
+		$handle->execute();
+
+		// executes method
+		$this->restAction->{self::ACTION_METHOD}();
 	}
 }
 

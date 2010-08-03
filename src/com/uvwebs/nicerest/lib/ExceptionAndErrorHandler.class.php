@@ -1,5 +1,5 @@
 <?php
-class lib_ExceptionAndErrorHandler
+class nicerest_lib_ExceptionAndErrorHandler
 {
 	private function __construct()
 	{
@@ -15,7 +15,7 @@ class lib_ExceptionAndErrorHandler
 
 	static public function getInstance()
 	{
-		$c = new lib_ExceptionAndErrorHandler();
+		$c = new nicerest_lib_ExceptionAndErrorHandler();
 		return $c;
 	}
 

@@ -1,11 +1,16 @@
 <?php
+/**
+ * @RequestMethod = get
+ * @Response = xml
+ *
+ */
 class nicerest_action_basic
 {
 	public function execute()
 	{
-		echo 'Action basic test';
-		echo '<br />';
-		var_dump($_REQUEST);
+		echo '<root>';
+		echo '<response>ok</response>';
+		echo '</root>';
 	}
 }
 

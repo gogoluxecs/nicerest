@@ -10,15 +10,14 @@ $pathToBootstrap = dirname(dirname(dirname(__FILE__))) .
 
 require_once $pathToBootstrap;
 
-$className = strtolower(substr($_SERVER['REDIRECT_URL'], 1));
-$className = str_replace('/', '_', $className);
+$redirectUrl = isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : null;
 
-$classFilepath = strtolower($_SERVER['REDIRECT_URL']);
-$classFilepath = dirname(dirname(__FILE__)) . $classFilepath . '.php';
+$className = str_replace('/', '_', strtolower(substr($redirectUrl, 1)));
+$classFilepath = dirname(dirname(__FILE__)) . strtolower($redirectUrl) . '.php';
 
 if(file_exists($classFilepath) && class_exists($className, true))
 {
-  lib_ActionFactory::createAction($className);
+  nicerest_lib_ActionFactory::createAction($className);
 }
 else
 {

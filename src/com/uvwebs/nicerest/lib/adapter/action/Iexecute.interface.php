@@ -1,5 +1,5 @@
 <?php
-interface lib_adapter_action_Iexecute
+interface nicerest_lib_adapter_action_Iexecute
 {
 	/**
 	 * Executes an action independant from server's request method

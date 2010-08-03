@@ -1,12 +1,12 @@
 <?php
-class lib_AutoLoad
+class nicerest_lib_AutoLoad
 {
 	/**
 	 * @return String
 	 */
 	private $filename = '';
 
-	private function __construct()
+	public function __construct()
 	{
 		spl_autoload_register(array($this, 'autoload'));
 	}
@@ -18,7 +18,7 @@ class lib_AutoLoad
 
 	static public function getInstance()
 	{
-		$c = new lib_AutoLoad();
+		$c = new nicerest_lib_AutoLoad();
 		return $c;
 	}
 
